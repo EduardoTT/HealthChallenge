@@ -19,8 +19,6 @@ class ViewController: UIViewController {
     var arrozQtd:Double = 0.0
     var paoQtd:Double = 0.0
     var resultado:Double = 0.0
-    var arrozKcal:Double = 1.28
-    var paoKcal:Double = 3.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +43,16 @@ class ViewController: UIViewController {
     }
     
     func calculaResultado() {
+        var arrozKcal:Double = 0.0
+        var paoKcal:Double = 0.0
+        if let path = NSBundle.mainBundle().pathForResource("Alimentos", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+                arrozKcal = dict["Arroz"] as! Double
+                arrozKcal = arrozKcal/100
+                paoKcal = dict["Pao"] as! Double
+                paoKcal = paoKcal/100
+            }
+        }
         resultado = arrozQtd*arrozKcal + paoQtd*paoKcal
         resultadoLabel.text = "\(resultado) Kcal"
     }
