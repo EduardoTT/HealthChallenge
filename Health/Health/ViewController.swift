@@ -10,6 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var arrozStepper: UIStepper!
+    @IBOutlet weak var arrozLabel: UILabel!
+    @IBOutlet weak var paoStepper: UIStepper!
+    @IBOutlet weak var paoLabel: UILabel!
+    @IBOutlet weak var resultadoLabel: UILabel!
+    
+    var arrozQtd:Double = 0.0
+    var paoQtd:Double = 0.0
+    var resultado:Double = 0.0
+    var arrozKcal:Double = 1.28
+    var paoKcal:Double = 3.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +32,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func arrozStepperChanged(sender: AnyObject) {
+        arrozQtd = arrozStepper.value
+        arrozLabel.text = "\(arrozQtd) Gramas"
+        calculaResultado()
+    }
+
+    @IBAction func paoStepperChanged(sender: AnyObject) {
+        paoQtd = paoStepper.value
+        paoLabel.text = "\(paoQtd) Gramas"
+        calculaResultado()
+    }
+    
+    func calculaResultado() {
+        resultado = arrozQtd*arrozKcal + paoQtd*paoKcal
+        resultadoLabel.text = "\(resultado) Kcal"
+    }
 
 }
-

@@ -10,10 +10,9 @@
 		A0B7F2881B5D7A65005953CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2871B5D7A65005953CD /* AppDelegate.swift */; };
 		A0B7F28A1B5D7A65005953CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2891B5D7A65005953CD /* ViewController.swift */; };
 		A0B7F28D1B5D7A65005953CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F28B1B5D7A65005953CD /* Main.storyboard */; };
+		A0B7F28F1B5D7A65005953CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F28E1B5D7A65005953CD /* Images.xcassets */; };
 		A0B7F2921B5D7A65005953CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F2901B5D7A65005953CD /* LaunchScreen.xib */; };
 		A0B7F29E1B5D7A65005953CD /* HealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F29D1B5D7A65005953CD /* HealthTests.swift */; };
-		A0B7F2A81B5D803C005953CD /* Alimentos.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F2A71B5D803C005953CD /* Alimentos.plist */; };
-		A0B7F2AA1B5D83C8005953CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F2A91B5D83C8005953CD /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,12 +31,11 @@
 		A0B7F2871B5D7A65005953CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0B7F2891B5D7A65005953CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0B7F28C1B5D7A65005953CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A0B7F28E1B5D7A65005953CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0B7F2911B5D7A65005953CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A0B7F2971B5D7A65005953CD /* HealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B7F29C1B5D7A65005953CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0B7F29D1B5D7A65005953CD /* HealthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTests.swift; sourceTree = "<group>"; };
-		A0B7F2A71B5D803C005953CD /* Alimentos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Alimentos.plist; sourceTree = "<group>"; };
-		A0B7F2A91B5D83C8005953CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +79,9 @@
 			children = (
 				A0B7F2871B5D7A65005953CD /* AppDelegate.swift */,
 				A0B7F2891B5D7A65005953CD /* ViewController.swift */,
-				A0B7F2A71B5D803C005953CD /* Alimentos.plist */,
 				A0B7F28B1B5D7A65005953CD /* Main.storyboard */,
+				A0B7F28E1B5D7A65005953CD /* Images.xcassets */,
 				A0B7F2901B5D7A65005953CD /* LaunchScreen.xib */,
-				A0B7F2A91B5D83C8005953CD /* Images.xcassets */,
 				A0B7F2851B5D7A65005953CD /* Supporting Files */,
 			);
 			path = Health;
@@ -195,10 +192,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B7F2AA1B5D83C8005953CD /* Images.xcassets in Resources */,
 				A0B7F28D1B5D7A65005953CD /* Main.storyboard in Resources */,
-				A0B7F2A81B5D803C005953CD /* Alimentos.plist in Resources */,
 				A0B7F2921B5D7A65005953CD /* LaunchScreen.xib in Resources */,
+				A0B7F28F1B5D7A65005953CD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
