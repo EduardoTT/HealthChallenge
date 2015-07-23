@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A05F42B31B618AED00B6F3F9 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F42B21B618AED00B6F3F9 /* DAO.swift */; };
 		A0B7F2881B5D7A65005953CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2871B5D7A65005953CD /* AppDelegate.swift */; };
 		A0B7F28A1B5D7A65005953CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2891B5D7A65005953CD /* ViewController.swift */; };
 		A0B7F28D1B5D7A65005953CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F28B1B5D7A65005953CD /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A05F42B21B618AED00B6F3F9 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		A0B7F2821B5D7A65005953CD /* Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B7F2861B5D7A65005953CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0B7F2871B5D7A65005953CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,12 +81,9 @@
 		A0B7F2841B5D7A65005953CD /* Health */ = {
 			isa = PBXGroup;
 			children = (
-				A0B7F2871B5D7A65005953CD /* AppDelegate.swift */,
-				A0B7F2891B5D7A65005953CD /* ViewController.swift */,
-				A0B7F2A71B5D803C005953CD /* Alimentos.plist */,
-				A0B7F28B1B5D7A65005953CD /* Main.storyboard */,
-				A0B7F2901B5D7A65005953CD /* LaunchScreen.xib */,
-				A0B7F2A91B5D83C8005953CD /* Images.xcassets */,
+				A0F41AA51B60142F00C34FC6 /* Model */,
+				A0F41AA61B60143C00C34FC6 /* View */,
+				A0F41AA71B60144400C34FC6 /* Controller */,
 				A0B7F2851B5D7A65005953CD /* Supporting Files */,
 			);
 			path = Health;
@@ -93,6 +92,7 @@
 		A0B7F2851B5D7A65005953CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0B7F2A71B5D803C005953CD /* Alimentos.plist */,
 				A0B7F2861B5D7A65005953CD /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -113,6 +113,33 @@
 				A0B7F29C1B5D7A65005953CD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0F41AA51B60142F00C34FC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A0F41AA61B60143C00C34FC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7F2A91B5D83C8005953CD /* Images.xcassets */,
+				A0B7F2901B5D7A65005953CD /* LaunchScreen.xib */,
+				A0B7F28B1B5D7A65005953CD /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A0F41AA71B60144400C34FC6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7F2871B5D7A65005953CD /* AppDelegate.swift */,
+				A0B7F2891B5D7A65005953CD /* ViewController.swift */,
+				A05F42B21B618AED00B6F3F9 /* DAO.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05F42B31B618AED00B6F3F9 /* DAO.swift in Sources */,
 				A0B7F28A1B5D7A65005953CD /* ViewController.swift in Sources */,
 				A0B7F2881B5D7A65005953CD /* AppDelegate.swift in Sources */,
 			);
@@ -415,6 +443,7 @@
 				A0B7F2A31B5D7A65005953CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0B7F2A41B5D7A65005953CD /* Build configuration list for PBXNativeTarget "HealthTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +452,7 @@
 				A0B7F2A61B5D7A65005953CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

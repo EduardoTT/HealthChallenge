@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A77F40CA-E16C-47D8-B0A3-2E4D70239521</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Health</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>F3532379F59E076DC2F68629E575B9408CF455D7</key>
 		<string>https://github.com/EduardoTT/HealthChallenge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Health/Health.xcodeproj/project.xcworkspace</string>
+	<string>Health/Health.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F3532379F59E076DC2F68629E575B9408CF455D7</key>

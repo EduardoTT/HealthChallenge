@@ -16,8 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Arroz" translatesAutoresizingMaskIntoConstraints="NO" id="ygd-7C-h3h">
-                                <rect key="frame" x="6" y="99" width="170" height="157"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Arroz" translatesAutoresizingMaskIntoConstraints="NO" id="ygd-7C-h3h">
+                                <rect key="frame" x="8" y="99" width="170" height="157"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pao-Frances" translatesAutoresizingMaskIntoConstraints="NO" id="x5B-h9-vZr">
                                 <rect key="frame" x="190" y="99" width="180" height="157"/>

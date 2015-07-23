@@ -43,18 +43,17 @@ class ViewController: UIViewController {
     }
     
     func calculaResultado() {
-        var arrozKcal:Double = 0.0
+        var arroz:[String] = [String]()
+        var arrozKcal = 0.0
         var paoKcal:Double = 0.0
         if let path = NSBundle.mainBundle().pathForResource("Alimentos", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-                arrozKcal = dict["Arroz"] as! Double
-                arrozKcal = arrozKcal/100
-                paoKcal = dict["Pao"] as! Double
-                paoKcal = paoKcal/100
+                arroz = dict["1"] as! [String]
+                println(arroz)
+                arrozKcal = (arroz[1] as NSString).doubleValue
             }
         }
-        resultado = arrozQtd*arrozKcal + paoQtd*paoKcal
+        resultado = arrozQtd*arrozKcal/100
         resultadoLabel.text = "\(resultado) Kcal"
     }
-
 }
