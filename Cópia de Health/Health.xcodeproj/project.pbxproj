@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A05F42B31B618AED00B6F3F9 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F42B21B618AED00B6F3F9 /* DAO.swift */; };
 		A0B7F2881B5D7A65005953CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2871B5D7A65005953CD /* AppDelegate.swift */; };
-		A0B7F28A1B5D7A65005953CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2891B5D7A65005953CD /* ViewController.swift */; };
+		A0B7F28A1B5D7A65005953CD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2891B5D7A65005953CD /* TableViewController.swift */; };
 		A0B7F28D1B5D7A65005953CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F28B1B5D7A65005953CD /* Main.storyboard */; };
-		A0B7F28F1B5D7A65005953CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F28E1B5D7A65005953CD /* Images.xcassets */; };
 		A0B7F2921B5D7A65005953CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F2901B5D7A65005953CD /* LaunchScreen.xib */; };
 		A0B7F29E1B5D7A65005953CD /* HealthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F29D1B5D7A65005953CD /* HealthTests.swift */; };
+		A0B7F2A81B5D803C005953CD /* Alimentos.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F2A71B5D803C005953CD /* Alimentos.plist */; };
+		A0B7F2AA1B5D83C8005953CD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F2A91B5D83C8005953CD /* Images.xcassets */; };
+		A0E809CF1B62C49B005C1D31 /* Alimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E809CE1B62C49B005C1D31 /* Alimento.swift */; };
+		A0E809D11B62C4B9005C1D31 /* ValorNutricional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E809D01B62C4B9005C1D31 /* ValorNutricional.swift */; };
+		A0E809D31B62C4D8005C1D31 /* Prato.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E809D21B62C4D8005C1D31 /* Prato.swift */; };
+		A0E809D51B62D756005C1D31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E809D41B62D756005C1D31 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A05F42B21B618AED00B6F3F9 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		A0B7F2821B5D7A65005953CD /* Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B7F2861B5D7A65005953CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0B7F2871B5D7A65005953CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0B7F2891B5D7A65005953CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A0B7F2891B5D7A65005953CD /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		A0B7F28C1B5D7A65005953CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A0B7F28E1B5D7A65005953CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0B7F2911B5D7A65005953CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A0B7F2971B5D7A65005953CD /* HealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B7F29C1B5D7A65005953CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0B7F29D1B5D7A65005953CD /* HealthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTests.swift; sourceTree = "<group>"; };
+		A0B7F2A71B5D803C005953CD /* Alimentos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Alimentos.plist; sourceTree = "<group>"; };
+		A0B7F2A91B5D83C8005953CD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A0E809CE1B62C49B005C1D31 /* Alimento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alimento.swift; sourceTree = "<group>"; };
+		A0E809D01B62C4B9005C1D31 /* ValorNutricional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValorNutricional.swift; sourceTree = "<group>"; };
+		A0E809D21B62C4D8005C1D31 /* Prato.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prato.swift; sourceTree = "<group>"; };
+		A0E809D41B62D756005C1D31 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +89,9 @@
 		A0B7F2841B5D7A65005953CD /* Health */ = {
 			isa = PBXGroup;
 			children = (
-				A0B7F2871B5D7A65005953CD /* AppDelegate.swift */,
-				A0B7F2891B5D7A65005953CD /* ViewController.swift */,
-				A0B7F28B1B5D7A65005953CD /* Main.storyboard */,
-				A0B7F28E1B5D7A65005953CD /* Images.xcassets */,
-				A0B7F2901B5D7A65005953CD /* LaunchScreen.xib */,
+				A0F41AA51B60142F00C34FC6 /* Model */,
+				A0F41AA61B60143C00C34FC6 /* View */,
+				A0F41AA71B60144400C34FC6 /* Controller */,
 				A0B7F2851B5D7A65005953CD /* Supporting Files */,
 			);
 			path = Health;
@@ -90,6 +100,7 @@
 		A0B7F2851B5D7A65005953CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0B7F2A71B5D803C005953CD /* Alimentos.plist */,
 				A0B7F2861B5D7A65005953CD /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +121,37 @@
 				A0B7F29C1B5D7A65005953CD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0F41AA51B60142F00C34FC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0E809CE1B62C49B005C1D31 /* Alimento.swift */,
+				A0E809D01B62C4B9005C1D31 /* ValorNutricional.swift */,
+				A0E809D21B62C4D8005C1D31 /* Prato.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A0F41AA61B60143C00C34FC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7F2A91B5D83C8005953CD /* Images.xcassets */,
+				A0B7F2901B5D7A65005953CD /* LaunchScreen.xib */,
+				A0B7F28B1B5D7A65005953CD /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A0F41AA71B60144400C34FC6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A0B7F2871B5D7A65005953CD /* AppDelegate.swift */,
+				A0B7F2891B5D7A65005953CD /* TableViewController.swift */,
+				A05F42B21B618AED00B6F3F9 /* DAO.swift */,
+				A0E809D41B62D756005C1D31 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +234,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0B7F2AA1B5D83C8005953CD /* Images.xcassets in Resources */,
 				A0B7F28D1B5D7A65005953CD /* Main.storyboard in Resources */,
+				A0B7F2A81B5D803C005953CD /* Alimentos.plist in Resources */,
 				A0B7F2921B5D7A65005953CD /* LaunchScreen.xib in Resources */,
-				A0B7F28F1B5D7A65005953CD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +255,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0B7F28A1B5D7A65005953CD /* ViewController.swift in Sources */,
+				A05F42B31B618AED00B6F3F9 /* DAO.swift in Sources */,
+				A0B7F28A1B5D7A65005953CD /* TableViewController.swift in Sources */,
+				A0E809D11B62C4B9005C1D31 /* ValorNutricional.swift in Sources */,
+				A0E809CF1B62C49B005C1D31 /* Alimento.swift in Sources */,
+				A0E809D51B62D756005C1D31 /* ViewController.swift in Sources */,
+				A0E809D31B62C4D8005C1D31 /* Prato.swift in Sources */,
 				A0B7F2881B5D7A65005953CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +459,7 @@
 				A0B7F2A31B5D7A65005953CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0B7F2A41B5D7A65005953CD /* Build configuration list for PBXNativeTarget "HealthTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +468,7 @@
 				A0B7F2A61B5D7A65005953CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
