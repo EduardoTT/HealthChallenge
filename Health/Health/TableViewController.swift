@@ -16,6 +16,9 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var searchActive : Bool = false
     var data:[String] = [String]()
     var filtered:[String] = []
+    var alimentoParaEnviar:Alimento?
+    var alimentosExistentes:[Alimento] = [Alimento]()
+    var quantidades:[String:Double] = [String:Double]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +29,19 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         searchBar.delegate = self
         var alimentos:[String:Alimento] = DAO.sharedInstance.alimentosPorId
         for alimento in alimentos.values {
-            data.append(alimento.valorNutricional.descricao)
+            if (!containsAlimento(alimento, array: alimentosExistentes)) {
+                data.append(alimento.valorNutricional.descricao)
+            }
         }
+    }
+    
+    func containsAlimento (alimento: Alimento, array: [Alimento]) -> Bool {
+        for temp in array {
+            if (alimento.id == temp.id) {
+                return true
+            }
+        }
+        return false
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
@@ -89,16 +103,29 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell;
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        if segue!.identifier == "paraFoto" {
+            let viewController:ViewController = segue!.destinationViewController as! ViewController
+            alimentosExistentes.append(self.alimentoParaEnviar!)
+            self.quantidades[alimentoParaEnviar!.id] = 100
+            viewController.alimentosEscolhidos = [Alimento]()
+            for alimento in alimentosExistentes {
+                viewController.alimentosEscolhidos.append(alimento)
+                viewController.quantidades[alimento.id] = self.quantidades[alimento.id]
+            }
+        }
+        
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         var cell = tableView.cellForRowAtIndexPath(indexPath)
         var text = cell?.textLabel?.text
         var alimento = DAO.sharedInstance.alimentosPorDescricao[text!]!
-        println(alimento.valorNutricional.descricao)
-        println("kcal: \(alimento.valorNutricional.energia!)")
-        println("proteina: \(alimento.valorNutricional.proteina!)")
-        println("lipideos: \(alimento.valorNutricional.lipideos!)")
-        println("colesterol: \(alimento.valorNutricional.colesterol!)")
-        println()
+        self.alimentoParaEnviar = alimento
+        self.performSegueWithIdentifier("paraFoto", sender: self)
+       
     }
+    
+
 }

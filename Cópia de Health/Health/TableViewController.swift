@@ -16,6 +16,8 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var searchActive : Bool = false
     var data:[String] = [String]()
     var filtered:[String] = []
+    var alimentoParaEnviar:Alimento?
+    var alimentosExistentes:[Alimento] = [Alimento]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,16 +91,33 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         return cell;
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        if segue!.identifier == "paraFoto" {
+            let viewController:ViewController = segue!.destinationViewController as! ViewController
+            alimentosExistentes.append(self.alimentoParaEnviar!)
+            viewController.alimentosEscolhidos = [Alimento]()
+            for alimento in alimentosExistentes {
+                viewController.alimentosEscolhidos.append(alimento)
+            }
+        }
+        
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         var cell = tableView.cellForRowAtIndexPath(indexPath)
         var text = cell?.textLabel?.text
         var alimento = DAO.sharedInstance.alimentosPorDescricao[text!]!
-        println(alimento.valorNutricional.descricao)
-        println("kcal: \(alimento.valorNutricional.energia!)")
-        println("proteina: \(alimento.valorNutricional.proteina!)")
-        println("lipideos: \(alimento.valorNutricional.lipideos!)")
-        println("colesterol: \(alimento.valorNutricional.colesterol!)")
-        println()
+        self.alimentoParaEnviar = alimento
+//        println(alimento.valorNutricional.descricao)
+//        println("kcal: \(alimento.valorNutricional.energia!)")
+//        println("proteina: \(alimento.valorNutricional.proteina!)")
+//        println("lipideos: \(alimento.valorNutricional.lipideos!)")
+//        println("colesterol: \(alimento.valorNutricional.colesterol!)")
+//        println()
+        self.performSegueWithIdentifier("paraFoto", sender: self)
+       
     }
+    
+
 }
