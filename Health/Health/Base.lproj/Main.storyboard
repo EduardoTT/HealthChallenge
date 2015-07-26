@@ -25,12 +25,25 @@
                                     <segue destination="uko-c9-xx2" kind="showDetail" id="82k-JV-OAL"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naR-BA-laJ">
+                                <rect key="frame" x="0.0" y="505" width="375" height="162"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL4-gN-ivA">
+                                <rect key="frame" x="169" y="480" width="30" height="30"/>
+                                <state key="normal" title="Ok">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Foto" id="LWq-DE-SmB"/>
                     <navigationItem key="navigationItem" id="xRk-HC-jPw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="closeQtdPicker" destination="cL4-gN-ivA" id="01q-Gr-Yhf"/>
+                        <outlet property="qtdPicker" destination="naR-BA-laJ" id="XPa-iI-JWe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

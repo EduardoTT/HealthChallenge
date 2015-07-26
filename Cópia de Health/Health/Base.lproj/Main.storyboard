@@ -16,14 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqB-hC-sLc">
-                                <rect key="frame" x="129" y="79" width="117" height="30"/>
-                                <state key="normal" title="Escolher Comida">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqB-hC-sLc">
+                                <rect key="frame" x="159" y="53" width="56" height="52"/>
+                                <state key="normal" image="1-FinishedPlus">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="uko-c9-xx2" kind="showDetail" id="82k-JV-OAL"/>
                                 </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="naR-BA-laJ">
+                                <rect key="frame" x="0.0" y="505" width="375" height="162"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL4-gN-ivA">
+                                <rect key="frame" x="169" y="480" width="30" height="30"/>
+                                <state key="normal" title="Ok">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -31,6 +40,10 @@
                     <tabBarItem key="tabBarItem" title="Foto" id="LWq-DE-SmB"/>
                     <navigationItem key="navigationItem" id="xRk-HC-jPw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="closeQtdPicker" destination="cL4-gN-ivA" id="01q-Gr-Yhf"/>
+                        <outlet property="qtdPicker" destination="naR-BA-laJ" id="XPa-iI-JWe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,6 +135,9 @@
             <point key="canvasLocation" x="1350.5" y="-456.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1-FinishedPlus" width="71" height="68"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="x2S-5P-h7h"/>
     </inferredMetricsTieBreakers>

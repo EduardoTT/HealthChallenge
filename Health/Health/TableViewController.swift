@@ -18,7 +18,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var filtered:[String] = []
     var alimentoParaEnviar:Alimento?
     var alimentosExistentes:[Alimento] = [Alimento]()
-    var quantidades:[String:Double] = [String:Double]()
+    var quantidades:[String:Int] = [String:Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
