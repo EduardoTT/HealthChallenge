@@ -43,6 +43,15 @@
                                     <action selector="save:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uUS-wx-2fg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJw-U2-P7m">
+                                <rect key="frame" x="58" y="64" width="48" height="30"/>
+                                <state key="normal" title="Limpar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="limpar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UOh-dM-6DG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -58,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="683.5" y="-456.5"/>
         </scene>
-        <!--Item 2-->
+        <!--Histórico-->
         <scene sceneID="YRF-Pp-EcT">
             <objects>
-                <viewController id="lb8-i0-Ncf" sceneMemberID="viewController">
+                <viewController title="Histórico" id="lb8-i0-Ncf" customClass="historico" customModule="Health" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UTJ-7g-SOB"/>
                         <viewControllerLayoutGuide type="bottom" id="T86-bJ-C8D"/>
@@ -71,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Rm5-za-cD3"/>
+                    <tabBarItem key="tabBarItem" title="Historico" id="Rm5-za-cD3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5O8-fw-8yZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,6 +137,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nun-0G-SLc">
+                                <rect key="frame" x="8" y="13" width="61" height="30"/>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ty6-Ii-NiS" kind="showDetail" id="amJ-ho-2z9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -136,7 +154,7 @@
                     <connections>
                         <outlet property="searchBar" destination="E0F-Nw-uNn" id="T3v-g1-OFc"/>
                         <outlet property="tableView" destination="nQ5-y7-hLf" id="dVN-oQ-f4h"/>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="paraFoto" id="x2S-5P-h7h"/>
+                        <segue destination="Ty6-Ii-NiS" kind="showDetail" identifier="paraFoto" id="frv-Bk-Ftz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4U-88-RHE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,6 +166,6 @@
         <image name="1-FinishedPlus" width="71" height="68"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="x2S-5P-h7h"/>
+        <segue reference="frv-Bk-Ftz"/>
     </inferredMetricsTieBreakers>
 </document>

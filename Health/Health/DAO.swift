@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 //Alimentos.plist description
 //0 - descrição
@@ -41,6 +42,9 @@ class DAO {
     let alimentosPorId:[String:Alimento]!
     let alimentosPorDescricao:[String:Alimento]!
     private let nAlimentos = 597
+    
+    var alimentosEscolhidos:[String:Alimento] = [String:Alimento]()
+    var quantidades:[String:Int] = [String:Int]()
     
     private init() {
         self.alimentosPorId = [String:Alimento]()

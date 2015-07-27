@@ -27,12 +27,22 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
+        for a in DAO.sharedInstance.alimentosEscolhidos {
+            alimentosExistentes[a.0] = a.1
+        }
+        
+        for q in DAO.sharedInstance.quantidades {
+            quantidades[q.0] = q.1
+        }
+        
         var alimentos:[String:Alimento] = DAO.sharedInstance.alimentosPorId
         for alimento in alimentos.values {
             if (!containsAlimento(alimento, dict: alimentosExistentes)) {
                 data.append(alimento.valorNutricional.descricao)
             }
         }
+        
     }
     
     func containsAlimento (alimento: Alimento, dict: [String:Alimento]) -> Bool {
@@ -105,16 +115,19 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if segue!.identifier == "paraFoto" {
-            let viewController:ViewController = segue!.destinationViewController as! ViewController
+            //let viewController:ViewController = segue!.destinationViewController as! ViewController
             alimentosExistentes[self.alimentoParaEnviar!.id] = self.alimentoParaEnviar!
             self.quantidades[alimentoParaEnviar!.id] = 100
-            viewController.alimentosEscolhidos = [String:Alimento]()
+            //viewController.alimentosEscolhidos = [String:Alimento]()
+            DAO.sharedInstance.alimentosEscolhidos = [String:Alimento]()
             for alimento in alimentosExistentes {
-                viewController.alimentosEscolhidos[alimento.0] = alimento.1
-                viewController.quantidades[alimento.0] = self.quantidades[alimento.0]
+//                viewController.alimentosEscolhidos[alimento.0] = alimento.1
+//                viewController.quantidades[alimento.0] = self.quantidades[alimento.0]
+                DAO.sharedInstance.alimentosEscolhidos[alimento.0] = alimento.1
+                DAO.sharedInstance.quantidades[alimento.0] = self.quantidades[alimento.0]
             }
+            println(DAO.sharedInstance.alimentosEscolhidos)
         }
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)

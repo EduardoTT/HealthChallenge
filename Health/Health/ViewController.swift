@@ -43,6 +43,14 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         }
         qtdPicker.selectRow(9, inComponent: 0, animated: true)
         
+        for a in DAO.sharedInstance.alimentosEscolhidos {
+            alimentosEscolhidos[a.0] = a.1
+        }
+        
+        for q in DAO.sharedInstance.quantidades {
+            quantidades[q.0] = q.1
+        }
+        
         var total:Double = 0.0
         //cria o registro de cada alimento
         for alimento in alimentosEscolhidos.values {
@@ -66,10 +74,13 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var vc = segue.destinationViewController as! TableViewController
-        vc.alimentosExistentes = [String:Alimento]()
+//        vc.alimentosExistentes = [String:Alimento]()
+        DAO.sharedInstance.alimentosEscolhidos = [String:Alimento]()
         for alimento in alimentosEscolhidos.values {
-            vc.alimentosExistentes[alimento.id] = alimento
-            vc.quantidades[alimento.id] = self.quantidades[alimento.id]
+//            vc.alimentosExistentes[alimento.id] = alimento
+//            vc.quantidades[alimento.id] = self.quantidades[alimento.id]
+            DAO.sharedInstance.alimentosEscolhidos[alimento.id] = alimento
+            DAO.sharedInstance.quantidades[alimento.id] = self.quantidades[alimento.id]
         }
     }
     
@@ -192,6 +203,16 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         kcalTotalLabel!.text = "\(total) Kcal"
     }
     
+    @IBAction func limpar(sender: AnyObject) {
+        DAO.sharedInstance.alimentosEscolhidos = [String:Alimento]()
+        DAO.sharedInstance.quantidades = [String:Int]()
+        
+        for b in deleteButtons.values {
+            deletarRegistro(b)
+        }
+    }
+    
+    
     @IBAction func save(sender: AnyObject) {
         var prato = Prato(alimentos: alimentosEscolhidos, quantidades: quantidades, data: NSDate(), foto: "teste")
         DAO.sharedInstance.salvarPrato(prato)
@@ -200,5 +221,6 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         alert.message = "salvo com sucesso"
         alert.addButtonWithTitle("Ok")
         alert.show()
+        limpar("")
     }
 }
