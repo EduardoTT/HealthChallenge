@@ -20,6 +20,20 @@
 		A0E809CF1B62C49B005C1D31 /* Alimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E809CE1B62C49B005C1D31 /* Alimento.swift */; };
 		A0E809D11B62C4B9005C1D31 /* ValorNutricional.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E809D01B62C4B9005C1D31 /* ValorNutricional.swift */; };
 		A0E809D31B62C4D8005C1D31 /* Prato.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E809D21B62C4D8005C1D31 /* Prato.swift */; };
+		FDC5A4561B66C70D0048C18A /* FoodCompositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4511B66C70D0048C18A /* FoodCompositionView.swift */; };
+		FDC5A4571B66C70D0048C18A /* FoodDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4521B66C70D0048C18A /* FoodDiaryView.swift */; };
+		FDC5A4581B66C70D0048C18A /* FoodDiaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4531B66C70D0048C18A /* FoodDiaryCell.swift */; };
+		FDC5A4591B66C70D0048C18A /* FoodMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4541B66C70D0048C18A /* FoodMealView.swift */; };
+		FDC5A45A1B66C70D0048C18A /* FoodReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4551B66C70D0048C18A /* FoodReportView.swift */; };
+		FDC5A4631B66C71D0048C18A /* FoodDiaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A45B1B66C71D0048C18A /* FoodDiaryController.swift */; };
+		FDC5A4641B66C71D0048C18A /* FoodCompositionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A45C1B66C71D0048C18A /* FoodCompositionVC.swift */; };
+		FDC5A4651B66C71D0048C18A /* DrawingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A45D1B66C71D0048C18A /* DrawingScene.swift */; };
+		FDC5A4661B66C71D0048C18A /* AreaPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A45E1B66C71D0048C18A /* AreaPoints.swift */; };
+		FDC5A4671B66C71D0048C18A /* FoodMealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A45F1B66C71D0048C18A /* FoodMealVC.swift */; };
+		FDC5A4681B66C71D0048C18A /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4601B66C71D0048C18A /* MyTabBarController.swift */; };
+		FDC5A4691B66C71D0048C18A /* FoodReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4611B66C71D0048C18A /* FoodReportVC.swift */; };
+		FDC5A46A1B66C71D0048C18A /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4621B66C71D0048C18A /* PageVC.swift */; };
+		FDC5A46C1B66C7330048C18A /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A46B1B66C7330048C18A /* MealModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +64,20 @@
 		A0E809CE1B62C49B005C1D31 /* Alimento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alimento.swift; sourceTree = "<group>"; };
 		A0E809D01B62C4B9005C1D31 /* ValorNutricional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValorNutricional.swift; sourceTree = "<group>"; };
 		A0E809D21B62C4D8005C1D31 /* Prato.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prato.swift; sourceTree = "<group>"; };
+		FDC5A4511B66C70D0048C18A /* FoodCompositionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCompositionView.swift; sourceTree = "<group>"; };
+		FDC5A4521B66C70D0048C18A /* FoodDiaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDiaryView.swift; sourceTree = "<group>"; };
+		FDC5A4531B66C70D0048C18A /* FoodDiaryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDiaryCell.swift; sourceTree = "<group>"; };
+		FDC5A4541B66C70D0048C18A /* FoodMealView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodMealView.swift; sourceTree = "<group>"; };
+		FDC5A4551B66C70D0048C18A /* FoodReportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodReportView.swift; sourceTree = "<group>"; };
+		FDC5A45B1B66C71D0048C18A /* FoodDiaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDiaryController.swift; sourceTree = "<group>"; };
+		FDC5A45C1B66C71D0048C18A /* FoodCompositionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCompositionVC.swift; sourceTree = "<group>"; };
+		FDC5A45D1B66C71D0048C18A /* DrawingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingScene.swift; sourceTree = "<group>"; };
+		FDC5A45E1B66C71D0048C18A /* AreaPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaPoints.swift; sourceTree = "<group>"; };
+		FDC5A45F1B66C71D0048C18A /* FoodMealVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodMealVC.swift; sourceTree = "<group>"; };
+		FDC5A4601B66C71D0048C18A /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
+		FDC5A4611B66C71D0048C18A /* FoodReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodReportVC.swift; sourceTree = "<group>"; };
+		FDC5A4621B66C71D0048C18A /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		FDC5A46B1B66C7330048C18A /* MealModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +160,8 @@
 				A0E809CE1B62C49B005C1D31 /* Alimento.swift */,
 				A0E809D01B62C4B9005C1D31 /* ValorNutricional.swift */,
 				A0E809D21B62C4D8005C1D31 /* Prato.swift */,
+				A05F42B21B618AED00B6F3F9 /* DAO.swift */,
+				FDC5A46B1B66C7330048C18A /* MealModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -142,6 +172,11 @@
 				A0B7F2A91B5D83C8005953CD /* Images.xcassets */,
 				A0B7F2901B5D7A65005953CD /* LaunchScreen.xib */,
 				A0B7F28B1B5D7A65005953CD /* Main.storyboard */,
+				FDC5A4511B66C70D0048C18A /* FoodCompositionView.swift */,
+				FDC5A4521B66C70D0048C18A /* FoodDiaryView.swift */,
+				FDC5A4531B66C70D0048C18A /* FoodDiaryCell.swift */,
+				FDC5A4541B66C70D0048C18A /* FoodMealView.swift */,
+				FDC5A4551B66C70D0048C18A /* FoodReportView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -152,7 +187,14 @@
 				A0B7F2871B5D7A65005953CD /* AppDelegate.swift */,
 				A0B7F2891B5D7A65005953CD /* TableViewController.swift */,
 				A0D5EF721B66A83D00A9B134 /* ViewController.swift */,
-				A05F42B21B618AED00B6F3F9 /* DAO.swift */,
+				FDC5A45B1B66C71D0048C18A /* FoodDiaryController.swift */,
+				FDC5A45C1B66C71D0048C18A /* FoodCompositionVC.swift */,
+				FDC5A45D1B66C71D0048C18A /* DrawingScene.swift */,
+				FDC5A45E1B66C71D0048C18A /* AreaPoints.swift */,
+				FDC5A45F1B66C71D0048C18A /* FoodMealVC.swift */,
+				FDC5A4601B66C71D0048C18A /* MyTabBarController.swift */,
+				FDC5A4611B66C71D0048C18A /* FoodReportVC.swift */,
+				FDC5A4621B66C71D0048C18A /* PageVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -260,11 +302,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05F42B31B618AED00B6F3F9 /* DAO.swift in Sources */,
+				FDC5A46A1B66C71D0048C18A /* PageVC.swift in Sources */,
+				FDC5A4661B66C71D0048C18A /* AreaPoints.swift in Sources */,
 				A0B7F28A1B5D7A65005953CD /* TableViewController.swift in Sources */,
+				FDC5A45A1B66C70D0048C18A /* FoodReportView.swift in Sources */,
+				FDC5A4641B66C71D0048C18A /* FoodCompositionVC.swift in Sources */,
+				FDC5A4591B66C70D0048C18A /* FoodMealView.swift in Sources */,
+				FDC5A46C1B66C7330048C18A /* MealModel.swift in Sources */,
 				A0E809D11B62C4B9005C1D31 /* ValorNutricional.swift in Sources */,
+				FDC5A4691B66C71D0048C18A /* FoodReportVC.swift in Sources */,
+				FDC5A4561B66C70D0048C18A /* FoodCompositionView.swift in Sources */,
 				A0E809CF1B62C49B005C1D31 /* Alimento.swift in Sources */,
+				FDC5A4581B66C70D0048C18A /* FoodDiaryCell.swift in Sources */,
 				A0D5EF731B66A83D00A9B134 /* ViewController.swift in Sources */,
+				FDC5A4681B66C71D0048C18A /* MyTabBarController.swift in Sources */,
+				FDC5A4651B66C71D0048C18A /* DrawingScene.swift in Sources */,
 				A0E809D31B62C4D8005C1D31 /* Prato.swift in Sources */,
+				FDC5A4631B66C71D0048C18A /* FoodDiaryController.swift in Sources */,
+				FDC5A4671B66C71D0048C18A /* FoodMealVC.swift in Sources */,
+				FDC5A4571B66C70D0048C18A /* FoodDiaryView.swift in Sources */,
 				A0B7F2881B5D7A65005953CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Health/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -410,6 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Health/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;

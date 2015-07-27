@@ -16,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds);
+        
+        // Override point for customization after application launch.
+        self.window?.backgroundColor = UIColor.whiteColor();
+        
+        /* create an instance of our view controller
+        then set it as the window’s root view controller
+        */
+        //var nav = FoodCompositionVC();
+        //var nav = FoodDiaryController();
+        var nav = MyTabBarController();
+        self.window?.rootViewController = nav;
+        self.window?.backgroundColor = UIColor.blackColor();
+        self.window?.makeKeyAndVisible();
+        self.window?.addSubview(nav.view);
+        
         return true
     }
 
