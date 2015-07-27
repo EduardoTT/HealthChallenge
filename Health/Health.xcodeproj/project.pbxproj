@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A05F42B31B618AED00B6F3F9 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F42B21B618AED00B6F3F9 /* DAO.swift */; };
+		A08D8E0F1B65DDA7003877C7 /* Pratos.plist in Resources */ = {isa = PBXBuildFile; fileRef = A08D8E0E1B65DDA7003877C7 /* Pratos.plist */; };
 		A0B7F2881B5D7A65005953CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2871B5D7A65005953CD /* AppDelegate.swift */; };
 		A0B7F28A1B5D7A65005953CD /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B7F2891B5D7A65005953CD /* TableViewController.swift */; };
 		A0B7F28D1B5D7A65005953CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0B7F28B1B5D7A65005953CD /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		A05F42B21B618AED00B6F3F9 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		A08D8E0E1B65DDA7003877C7 /* Pratos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Pratos.plist; sourceTree = "<group>"; };
 		A0B7F2821B5D7A65005953CD /* Health.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B7F2861B5D7A65005953CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0B7F2871B5D7A65005953CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				A0B7F2A71B5D803C005953CD /* Alimentos.plist */,
+				A08D8E0E1B65DDA7003877C7 /* Pratos.plist */,
 				A0B7F2861B5D7A65005953CD /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -238,6 +241,7 @@
 				A0B7F28D1B5D7A65005953CD /* Main.storyboard in Resources */,
 				A0B7F2A81B5D803C005953CD /* Alimentos.plist in Resources */,
 				A0B7F2921B5D7A65005953CD /* LaunchScreen.xib in Resources */,
+				A08D8E0F1B65DDA7003877C7 /* Pratos.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

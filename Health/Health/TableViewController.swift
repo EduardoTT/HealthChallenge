@@ -17,7 +17,7 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     var data:[String] = [String]()
     var filtered:[String] = []
     var alimentoParaEnviar:Alimento?
-    var alimentosExistentes:[Alimento] = [Alimento]()
+    var alimentosExistentes:[String:Alimento] = [String:Alimento]()
     var quantidades:[String:Int] = [String:Int]()
     
     override func viewDidLoad() {
@@ -29,15 +29,15 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         searchBar.delegate = self
         var alimentos:[String:Alimento] = DAO.sharedInstance.alimentosPorId
         for alimento in alimentos.values {
-            if (!containsAlimento(alimento, array: alimentosExistentes)) {
+            if (!containsAlimento(alimento, dict: alimentosExistentes)) {
                 data.append(alimento.valorNutricional.descricao)
             }
         }
     }
     
-    func containsAlimento (alimento: Alimento, array: [Alimento]) -> Bool {
-        for temp in array {
-            if (alimento.id == temp.id) {
+    func containsAlimento (alimento: Alimento, dict: [String:Alimento]) -> Bool {
+        for temp in dict {
+            if (alimento.id == temp.1.id) {
                 return true
             }
         }
@@ -106,12 +106,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if segue!.identifier == "paraFoto" {
             let viewController:ViewController = segue!.destinationViewController as! ViewController
-            alimentosExistentes.append(self.alimentoParaEnviar!)
+            alimentosExistentes[self.alimentoParaEnviar!.id] = self.alimentoParaEnviar!
             self.quantidades[alimentoParaEnviar!.id] = 100
-            viewController.alimentosEscolhidos = [Alimento]()
+            viewController.alimentosEscolhidos = [String:Alimento]()
             for alimento in alimentosExistentes {
-                viewController.alimentosEscolhidos.append(alimento)
-                viewController.quantidades[alimento.id] = self.quantidades[alimento.id]
+                viewController.alimentosEscolhidos[alimento.0] = alimento.1
+                viewController.quantidades[alimento.0] = self.quantidades[alimento.0]
             }
         }
         

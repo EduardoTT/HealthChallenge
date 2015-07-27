@@ -11,17 +11,20 @@ import UIKit
 
 class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
-    var alimentosEscolhidos:[Alimento] = [Alimento]()
+    var alimentosEscolhidos:[String:Alimento] = [String:Alimento]()
     var quantidades:[String:Int] = [String:Int]()
     var caloriasLabels:[String:UILabel] = [String:UILabel]()
-    var botoes:[UIButton:String] = [UIButton:String]()
+    var botoes:[String:UIButton] = [String:UIButton]()
+    var nomeLabels:[String:UILabel] = [String:UILabel]()
+    var deleteButtons:[String:UIButton] = [String:UIButton]()
+    var caloriasGrandezaLabels:[String:UILabel] = [String:UILabel]()
     private var xPosition = CGFloat(90)
     private var yPosition = CGFloat(150)
     
     @IBOutlet weak var qtdPicker: UIPickerView!
     @IBOutlet weak var closeQtdPicker: UIButton!
     
-    private var kcalLabel:UILabel?
+    private var kcalTotalLabel:UILabel?
     
     var pickerLabels = [String]()
     var pickerValueSelected: Int = 100
@@ -42,7 +45,7 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         
         var total:Double = 0.0
         //cria o registro de cada alimento
-        for alimento in alimentosEscolhidos {
+        for alimento in alimentosEscolhidos.values {
             criarRegistroDeAlimento(alimento)
             total += alimento.valorNutricional.energia!/100 * Double(quantidades[alimento.id]!)
         }
@@ -51,10 +54,10 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         totalLabel.center = CGPointMake(xPosition, 450)
         totalLabel.text = "Total"
         self.view.addSubview(totalLabel)
-        kcalLabel = UILabel(frame: CGRectMake(0, 0, 100, 20))
-        kcalLabel!.center = CGPointMake(xPosition+200, 450)
-        kcalLabel!.text = "\(total) Kcal"
-        self.view.addSubview(kcalLabel!)
+        kcalTotalLabel = UILabel(frame: CGRectMake(0, 0, 100, 20))
+        kcalTotalLabel!.center = CGPointMake(xPosition+200, 450)
+        kcalTotalLabel!.text = "\(total) Kcal"
+        self.view.addSubview(kcalTotalLabel!)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -63,18 +66,28 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var vc = segue.destinationViewController as! TableViewController
-        vc.alimentosExistentes = [Alimento]()
-        for alimento in alimentosEscolhidos {
-            vc.alimentosExistentes.append(alimento)
+        vc.alimentosExistentes = [String:Alimento]()
+        for alimento in alimentosEscolhidos.values {
+            vc.alimentosExistentes[alimento.id] = alimento
             vc.quantidades[alimento.id] = self.quantidades[alimento.id]
         }
     }
     
     func criarRegistroDeAlimento (alimento: Alimento) {
+        let deleteButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        deleteButton.frame=CGRectMake(0, 0, 20, 20)
+        deleteButton.center = CGPointMake(xPosition-70, yPosition)
+        deleteButton.setBackgroundImage(UIImage(named: "delete-button.png"), forState: UIControlState.Normal)
+        deleteButton.tintColor = UIColor.blackColor()
+        deleteButton.addTarget(self, action: "deletarRegistro:", forControlEvents: .TouchUpInside)
+        deleteButtons[alimento.id] = deleteButton
+        self.view.addSubview(deleteButton)
+        
         var nomeLabel = UILabel(frame: CGRectMake(0, 0, 100, 20))
         nomeLabel.center = CGPointMake(xPosition, yPosition)
         nomeLabel.text = alimento.valorNutricional.descricao
         self.view.addSubview(nomeLabel)
+        nomeLabels[alimento.id] = nomeLabel
         
         var qtdButton = UIButton(frame: CGRectMake(0, 0, 100, 20))
         qtdButton.center = CGPointMake(xPosition+100, yPosition)
@@ -82,14 +95,20 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         qtdButton.setTitleColor(UIColor(red:0.0, green:0.478431, blue:1.0, alpha:1.0), forState: .Normal)
         qtdButton.setTitleColor(UIColor(red:0.0, green:0.478431, blue:1.0, alpha:0.2), forState: .Highlighted)
         qtdButton.addTarget(self, action: "pressed:", forControlEvents: .TouchUpInside)
-        botoes[qtdButton] = alimento.id
+        botoes[alimento.id] = qtdButton
         self.view.addSubview(qtdButton)
         
-        var kcalLabel = UILabel(frame: CGRectMake(0, 0, 100, 20))
-        kcalLabel.center = CGPointMake(xPosition+200, yPosition)
-        kcalLabel.text = "\(alimento.valorNutricional.energia!/100 * Double(quantidades[alimento.id]!))  Kcal"
-        self.view.addSubview(kcalLabel)
-        caloriasLabels[alimento.id] = kcalLabel
+        var kcalValLabel = UILabel(frame: CGRectMake(0, 0, 50, 20))
+        kcalValLabel.center = CGPointMake(xPosition+190, yPosition)
+        kcalValLabel.text = "\(alimento.valorNutricional.energia!/100 * Double(quantidades[alimento.id]!))"
+        self.view.addSubview(kcalValLabel)
+        caloriasLabels[alimento.id] = kcalValLabel
+        
+        var kcalGrandLabel = UILabel(frame: CGRectMake(0, 0, 100, 20))
+        kcalGrandLabel.center = CGPointMake(xPosition+280, yPosition)
+        kcalGrandLabel.text = "Kcal"
+        self.view.addSubview(kcalGrandLabel)
+        caloriasGrandezaLabels[alimento.id] = kcalGrandLabel
         
         yPosition += 30
     }
@@ -127,15 +146,59 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
         qtdPicker.hidden = true
         closeQtdPicker.hidden = true
         buttonChoosed?.setTitle("\(pickerValueSelected)g", forState: .Normal)
-        var id = botoes[buttonChoosed!]!
+        var id:String = ""
+        for button in botoes {
+            if (button.1 == buttonChoosed) {
+                id = button.0
+            }
+        }
         quantidades[id] = pickerValueSelected
         var kcal = DAO.sharedInstance.alimentosPorId[id]!.valorNutricional.energia!/100 * Double(quantidades[id]!)
-        caloriasLabels[id]!.text = "\(kcal) Kcal"
+        caloriasLabels[id]!.text = "\(kcal)"
         
         var total:Double = 0.0
-        for alimento in alimentosEscolhidos {
+        for alimento in alimentosEscolhidos.values {
             total += alimento.valorNutricional.energia!/100 * Double(quantidades[alimento.id]!)
         }
-        kcalLabel!.text = "\(total) Kcal"
+        kcalTotalLabel!.text = "\(total) Kcal"
+    }
+    
+    func deletarRegistro(sender:UIButton!) {
+        var id:String = ""
+        for button in deleteButtons {
+            if (button.1 == sender) {
+                id = button.0
+            }
+        }
+        
+        sender.removeFromSuperview()
+        deleteButtons.removeValueForKey(id)
+        botoes[id]?.removeFromSuperview()
+        botoes.removeValueForKey(id)
+        nomeLabels[id]?.removeFromSuperview()
+        nomeLabels.removeValueForKey(id)
+        caloriasLabels[id]?.removeFromSuperview()
+        caloriasLabels.removeValueForKey(id)
+        caloriasGrandezaLabels[id]?.removeFromSuperview()
+        caloriasGrandezaLabels.removeValueForKey(id)
+        
+        alimentosEscolhidos.removeValueForKey(id)
+        quantidades.removeValueForKey(id)
+        
+        var total:Double = 0.0
+        for alimento in alimentosEscolhidos.values {
+            total += alimento.valorNutricional.energia!/100 * Double(quantidades[alimento.id]!)
+        }
+        kcalTotalLabel!.text = "\(total) Kcal"
+    }
+    
+    @IBAction func save(sender: AnyObject) {
+        var prato = Prato(alimentos: alimentosEscolhidos, quantidades: quantidades, data: NSDate(), foto: "")
+        DAO.sharedInstance.salvarPrato(prato)
+        let alert = UIAlertView()
+        alert.title = "Alert"
+        alert.message = "salvo com sucesso"
+        alert.addButtonWithTitle("Ok")
+        alert.show()
     }
 }

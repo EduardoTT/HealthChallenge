@@ -11,12 +11,14 @@ import UIKit
 
 class Prato {
     
-    var alimentos:[Alimento]!
+    var alimentos:[String:Alimento]!
+    var quantidades:[String:Int]!
     var data:NSDate!
-    var foto:UIImage!
+    var foto:String!
     
-    init(alimentos:[Alimento],data:NSDate,foto:UIImage) {
+    init(alimentos:[String:Alimento],quantidades:[String:Int],data:NSDate,foto:String) {
         self.alimentos = alimentos
+        self.quantidades = quantidades
         self.data = data
         self.foto = foto
     }

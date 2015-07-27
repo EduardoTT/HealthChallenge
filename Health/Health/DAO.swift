@@ -72,4 +72,18 @@ class DAO {
             }
         }
     }
+    
+    func salvarPrato(prato:Prato) {
+        var pathAux = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
+        var path = pathAux.stringByAppendingPathComponent("Pratos.plist")
+        var fileManager = NSFileManager.defaultManager()
+        if (!(fileManager.fileExistsAtPath(path)))
+        {
+            var bundle : NSString! = NSBundle.mainBundle().pathForResource("Pratos", ofType: "plist")
+            //fileManager.copyItemAtPath(bundle, toPath: path, error:nil)
+        }
+        var data : NSMutableDictionary! = NSMutableDictionary(contentsOfFile: path)
+        data.setObject(10, forKey: "1")
+        data.writeToFile(path, atomically: false)
+    }
 }
