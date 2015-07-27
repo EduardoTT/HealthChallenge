@@ -8,7 +8,7 @@
 
 import Foundation
 
-//plist description
+//Alimentos.plist description
 //0 - descrição
 //1 - Energia - Kcal
 //2- Proteína - g
@@ -25,12 +25,12 @@ import Foundation
 //13 - Sódio - mg
 //14 - Potássio - mg
 
-//plist special values
+//Alimentos.plist special values
 //-1 NA : Nao aplicavel
 //-2 Tr : Traço, insignificante quantidade
 //-3 : Não há informação
 
-//plist
+//Alimentos.plist
 //valores por 100 gramas de partes comestíveis
 //http://www.unicamp.br/nepa/taco/tabela.php?ativo=tabela
 
@@ -74,16 +74,110 @@ class DAO {
     }
     
     func salvarPrato(prato:Prato) {
-        var pathAux = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        var path = pathAux.stringByAppendingPathComponent("Pratos.plist")
-        var fileManager = NSFileManager.defaultManager()
-        if (!(fileManager.fileExistsAtPath(path)))
-        {
-            var bundle : NSString! = NSBundle.mainBundle().pathForResource("Pratos", ofType: "plist")
-            //fileManager.copyItemAtPath(bundle, toPath: path, error:nil)
+        var alimentosDict = NSMutableDictionary()
+        var pratoDict = NSMutableDictionary()
+        for alimento in prato.alimentos {
+            var valorNutricionalDict = NSMutableDictionary()
+            var alimentoDict = NSMutableDictionary()
+            
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.descricao, forKey: "descricao")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.energia, forKey: "energia")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.proteina, forKey: "proteina")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.lipideos, forKey: "lipideos")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.colesterol, forKey: "colesterol")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.carboidrato, forKey: "carboidrato")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.fibra, forKey: "fibra")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.cinzas, forKey: "cinzas")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.calcio, forKey: "calcio")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.magnesio, forKey: "magnesio")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.manganes, forKey: "manganes")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.fosforo, forKey: "fosforo")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.ferro, forKey: "ferro")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.sodio, forKey: "sodio")
+            valorNutricionalDict.setValue(alimento.1.valorNutricional.potassio, forKey: "potassio")
+            
+            alimentoDict.setValue(valorNutricionalDict, forKey: "valorNutricional")
+            alimentoDict.setValue(prato.quantidades[alimento.0], forKey: "quantidade")
+            alimentosDict.setValue(alimentoDict, forKey: alimento.0)
         }
-        var data : NSMutableDictionary! = NSMutableDictionary(contentsOfFile: path)
-        data.setObject(10, forKey: "1")
-        data.writeToFile(path, atomically: false)
+        pratoDict.setValue(alimentosDict, forKey: "alimentos")
+        pratoDict.setValue(prato.data, forKey: "data")
+        pratoDict.setValue(prato.foto, forKey: "foto")
+        
+        if let path = NSBundle.mainBundle().pathForResource("Pratos", ofType: "plist"), array = NSMutableArray(contentsOfFile : path) {
+            array.addObject(pratoDict)
+            array.writeToFile(path, atomically: true)
+        }
+    }
+    
+    func getAllPratos() -> [Prato] {
+        var pratos = [Prato]()
+        
+        var alimentosDict:NSMutableDictionary
+        var data:NSDate
+        var foto:String
+        var pratoDict:NSMutableDictionary
+        var valorNutricionalDict:NSMutableDictionary
+        var id:String
+        var descricao:String
+        var energia:Double
+        var proteina:Double
+        var lipideos:Double
+        var colesterol:Double
+        var carboidrato:Double
+        var fibra:Double
+        var cinzas:Double
+        var calcio:Double
+        var magnesio:Double
+        var manganes:Double
+        var fosforo:Double
+        var ferro:Double
+        var sodio:Double
+        var potassio:Double
+        
+        if let path = NSBundle.mainBundle().pathForResource("Pratos", ofType: "plist"), array = NSMutableArray(contentsOfFile : path) {
+            var prato:NSMutableDictionary
+            for prato in array {
+                alimentosDict = prato.objectForKey("alimentos") as! NSMutableDictionary
+                data = prato.objectForKey("data") as! NSDate
+                foto = prato.objectForKey("foto") as! String
+                for x in alimentosDict {
+                    var pratoToReturn = Prato(alimentos: [String : Alimento](), quantidades: [String : Int](), data: data, foto: foto)
+                    valorNutricionalDict = x.value.objectForKey("valorNutricional") as! NSMutableDictionary
+                    id = x.key as! String
+                    descricao = valorNutricionalDict.objectForKey("descricao") as! String
+                    energia = valorNutricionalDict.objectForKey("energia") as! Double
+                    proteina = valorNutricionalDict.objectForKey("proteina") as! Double
+                    lipideos = valorNutricionalDict.objectForKey("lipideos") as! Double
+                    colesterol = valorNutricionalDict.objectForKey("colesterol") as! Double
+                    carboidrato = valorNutricionalDict.objectForKey("carboidrato") as! Double
+                    fibra = valorNutricionalDict.objectForKey("fibra") as! Double
+                    cinzas = valorNutricionalDict.objectForKey("cinzas") as! Double
+                    calcio = valorNutricionalDict.objectForKey("calcio") as! Double
+                    magnesio = valorNutricionalDict.objectForKey("magnesio") as! Double
+                    manganes = valorNutricionalDict.objectForKey("manganes") as! Double
+                    fosforo = valorNutricionalDict.objectForKey("fosforo") as! Double
+                    ferro = valorNutricionalDict.objectForKey("ferro") as! Double
+                    sodio = valorNutricionalDict.objectForKey("sodio") as! Double
+                    potassio = valorNutricionalDict.objectForKey("potassio") as! Double
+                    
+                    var valNut = ValorNutricional(descricao: descricao, energia: energia, proteina: proteina, lipideos: lipideos, colesterol: colesterol, carboidrato: carboidrato, fibra: fibra, cinzas: cinzas, calcio: calcio, magnesio: magnesio, manganes: manganes, fosforo: fosforo, ferro: ferro, sodio: sodio, potassio: potassio)
+                    var alimento = Alimento(id: id, valNut: valNut)
+                    pratoToReturn.alimentos[id] = alimento
+                    pratoToReturn.quantidades[id] = x.value.objectForKey("quantidade") as? Int
+                    
+                    pratos.append(pratoToReturn)
+                }
+            }
+            for p in pratos {
+                for a in p.alimentos {
+                    println(a.1.valorNutricional.descricao)
+                    println(a.1.valorNutricional.energia!)
+                }
+            }
+            return pratos
+        }
+        
+        return pratos
     }
 }

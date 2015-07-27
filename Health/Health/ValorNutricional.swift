@@ -30,4 +30,20 @@ class ValorNutricional {
         self.descricao = desc
     }
     
+    init(descricao:String, energia:Double, proteina:Double, lipideos:Double, colesterol:Double, carboidrato:Double, fibra:Double, cinzas:Double, calcio:Double, magnesio:Double, manganes:Double, fosforo:Double, ferro:Double, sodio:Double, potassio:Double) {
+        self.descricao = descricao
+        self.energia = energia
+        self.lipideos = lipideos
+        self.colesterol = colesterol
+        self.carboidrato = carboidrato
+        self.fibra = fibra
+        self.cinzas = cinzas
+        self.calcio = calcio
+        self.magnesio = magnesio
+        self.manganes = manganes
+        self.fosforo = fosforo
+        self.ferro = ferro
+        self.sodio = sodio
+        self.potassio = potassio
+    }
 }

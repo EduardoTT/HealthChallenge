@@ -17,5 +17,4 @@ class Alimento {
         self.id = id
         self.valorNutricional = valNut
     }
-    
 }

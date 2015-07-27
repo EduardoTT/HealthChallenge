@@ -193,7 +193,7 @@ class ViewController:UIViewController,UIPickerViewDelegate,UIPickerViewDataSourc
     }
     
     @IBAction func save(sender: AnyObject) {
-        var prato = Prato(alimentos: alimentosEscolhidos, quantidades: quantidades, data: NSDate(), foto: "")
+        var prato = Prato(alimentos: alimentosEscolhidos, quantidades: quantidades, data: NSDate(), foto: "teste")
         DAO.sharedInstance.salvarPrato(prato)
         let alert = UIAlertView()
         alert.title = "Alert"

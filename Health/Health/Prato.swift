@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class Prato {
-    
     var alimentos:[String:Alimento]!
     var quantidades:[String:Int]!
     var data:NSDate!
