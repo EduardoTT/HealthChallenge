@@ -34,6 +34,7 @@
 		FDC5A4691B66C71D0048C18A /* FoodReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4611B66C71D0048C18A /* FoodReportVC.swift */; };
 		FDC5A46A1B66C71D0048C18A /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A4621B66C71D0048C18A /* PageVC.swift */; };
 		FDC5A46C1B66C7330048C18A /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A46B1B66C7330048C18A /* MealModel.swift */; };
+		FDC5A46E1B66CE020048C18A /* FoodCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A46D1B66CE020048C18A /* FoodCollectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		FDC5A4611B66C71D0048C18A /* FoodReportVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodReportVC.swift; sourceTree = "<group>"; };
 		FDC5A4621B66C71D0048C18A /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		FDC5A46B1B66C7330048C18A /* MealModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
+		FDC5A46D1B66CE020048C18A /* FoodCollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCollectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				FDC5A4511B66C70D0048C18A /* FoodCompositionView.swift */,
 				FDC5A4521B66C70D0048C18A /* FoodDiaryView.swift */,
 				FDC5A4531B66C70D0048C18A /* FoodDiaryCell.swift */,
+				FDC5A46D1B66CE020048C18A /* FoodCollectionHeaderView.swift */,
 				FDC5A4541B66C70D0048C18A /* FoodMealView.swift */,
 				FDC5A4551B66C70D0048C18A /* FoodReportView.swift */,
 			);
@@ -314,6 +317,7 @@
 				FDC5A4561B66C70D0048C18A /* FoodCompositionView.swift in Sources */,
 				A0E809CF1B62C49B005C1D31 /* Alimento.swift in Sources */,
 				FDC5A4581B66C70D0048C18A /* FoodDiaryCell.swift in Sources */,
+				FDC5A46E1B66CE020048C18A /* FoodCollectionHeaderView.swift in Sources */,
 				A0D5EF731B66A83D00A9B134 /* ViewController.swift in Sources */,
 				FDC5A4681B66C71D0048C18A /* MyTabBarController.swift in Sources */,
 				FDC5A4651B66C71D0048C18A /* DrawingScene.swift in Sources */,

@@ -40,6 +40,7 @@ class FoodDiaryView : UIView{
         layout.scrollDirection = UICollectionViewScrollDirection.Vertical;
         collectionView = UICollectionView(frame: CGRectMake(spacing, 0.26*view.frame.height, view.frame.width-spacing*2, 0.727*view.frame.height), collectionViewLayout: layout);
         collectionView.registerClass(FoodDiaryCell.self, forCellWithReuseIdentifier: "cellIdentifier");
+        collectionView.registerClass(FoodCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "cellHeader")
         collectionView.backgroundColor = UIColor.clearColor();
         
         let plate = UIImage(named: "plate")!;
